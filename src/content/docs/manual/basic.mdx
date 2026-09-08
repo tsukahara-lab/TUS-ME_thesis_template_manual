@@ -529,8 +529,8 @@ ${}^{\circ}\mathrm{C}$ のようにマクロモードでしか使用できない
 | **コマンド**               | **出力**                                   |
 | `\SI{45}{W/m^2 K}`        | $45\ \mathrm{W}/\mathrm{m}^2 \mathrm{K}$  |
 | `\SI{45}{\degreeCelsius}` | $45\ {}^{\circ}\mathrm{C}$                |
-| `\SI{45}{\micro\meter}`   | $45\ \mathrm{\mu m}$                      |
-| `\SI{45}{\um}`            | $45\ \mathrm{\mu m}$                      |
+| `\SI{45}{\micro\meter}`   | $45\ \mathrm{µ m}$                      |
+| `\SI{45}{\um}`            | $45\ \mathrm{µ m}$                      |
 | `\SI{45}{mL}`             | $45\ \mathrm{mL}$                         |
 
 最後に示したミリリットル $\mathrm{mL}$ には気をつけてください．
@@ -545,9 +545,21 @@ ${}^{\circ}\mathrm{C}$ のようにマクロモードでしか使用できない
 </TabItem>
 <TabItem label="Typst">
 
-:::note
-`unify`パッケージの使用方法は更新予定
-:::
+`unify`パッケージでは，基本的にテキストモードのみサポートされています．
+本テンプレートでは，`#si("W/m^2 K")` のように書くことで，$\mathrm{W}\ \mathrm{K}/\mathrm{m}^2$ と出力されます．
+数値と単位を合わせて出力する場合は，`#SI(45, "W/m^2 K")` のように書くことで，$45\ \mathrm{W}\ \mathrm{K}/\mathrm{m}^2$ と出力されます．
+
+|  |  |
+|:---|:---|
+| 【さまざまな単位の出力】      |                                           |
+| **コマンド**               | **出力**                                   |
+| `#SI(45, "W/m^2 K")`        | $45\ \mathrm{W}\ \mathrm{K}/\mathrm{m}^2$  |
+| `#SI(45, "dC")` | $45\ {}^{\circ}\mathrm{C}$                |
+| `#SI(45, "um")`   | $45\ \mathrm{µ m}$                      |
+| `#SI(45, "mL")`             | $45\ \mathrm{mL}$                         |
+
+使用可能な単位については，[パッケージの単位CSVファイル](https://github.com/ChHecker/unify/blob/main/units-en.csv)を参照してください．
+また，同様に使用可能な接頭辞については，[パッケージの接頭辞CSVファイル](https://github.com/ChHecker/unify/blob/main/prefixes-en.csv)を参照してください．
 
 </TabItem>
 </Tabs>
